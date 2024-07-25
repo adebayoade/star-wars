@@ -1,21 +1,10 @@
+import { Species } from '@/store/slices/api/species';
 import { ColumnDef } from '@tanstack/react-table';
 import dayjs from 'dayjs';
 import { Eye } from 'lucide-react';
 import { Link } from 'react-router-dom';
-// import Link from 'next/link';
 
-// This type is used to define the shape of our data.
-// You can use a Zod schema here if you want.
-type People = {
-  id: string;
-  name: string;
-  birth_year: string;
-  hair_color: string;
-  height: string;
-  created: string;
-};
-
-export const columns: ColumnDef<People>[] = [
+export const columns: ColumnDef<Species>[] = [
   {
     accessorKey: 'name',
     header: 'Name',
@@ -40,7 +29,7 @@ export const columns: ColumnDef<People>[] = [
     accessorKey: 'created',
     header: 'Created',
     cell: ({ row }) => {
-      return <span>{dayjs(row.getValue('createdAt')).format('MMM DD, YYYY HH:MM A')}</span>;
+      return <span>{dayjs(row.getValue('created')).format('MMM DD, YYYY HH:MM A')}</span>;
     },
   },
   {

@@ -5,7 +5,6 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 import MainLayout from './layouts/main-layout';
-import HomeScreen from './pages/home';
 import NotFound from './pages/not-found';
 import AuthLayout from './layouts/auth-layout';
 import Login from './pages/auth/login';
@@ -22,11 +21,6 @@ import SingleStarship from './pages/dashboard/starships/[id]';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      {/* <Route element={<MainLayout />}>
-        <Route index element={<HomeScreen />} />
-        <Route path="*" element={<NotFound />} />
-      </Route> */}
-
       <Route element={<MainLayout />}>
         <Route element={<AuthLayout />}>
           <Route index element={<Login />} />

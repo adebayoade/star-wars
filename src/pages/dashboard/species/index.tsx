@@ -9,6 +9,20 @@ import MetaData from '@/components/ui/meta-data';
 export default function Species() {
   const { data, isLoading, error } = useGetSpeciesQuery();
 
+  let errMsg = '';
+  if (error) {
+    // 2) Checking if error is FetchBaseQueryError based on
+    // discriminated property 'status':
+    if ('status' in error) {
+      // you can access all properties of `FetchBaseQueryError` here
+      errMsg = 'error' in error ? error.error : JSON.stringify(error.data);
+      // 3) We're left with the 3rd case, SerializedError:
+    } else {
+      // you can access all properties of `SerializedError` here
+      errMsg = 'An error occurred';
+    }
+  }
+
   return (
     <>
       <MetaData title={'Species'} />
@@ -16,7 +30,7 @@ export default function Species() {
         {isLoading ? (
           <Spinner />
         ) : error ? (
-          <Message variant="destructive" text={error?.data?.message || error?.error} />
+          <Message variant="destructive" text={errMsg} />
         ) : (
           <>
             <Heading title="Species" />

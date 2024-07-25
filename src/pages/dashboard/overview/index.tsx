@@ -11,6 +11,20 @@ import { Icon } from '@/components/icons';
 export default function Overview() {
   const { data: films, isLoading, error } = useGetFilmsQuery();
 
+  let errMsg = '';
+  if (error) {
+    // 2) Checking if error is FetchBaseQueryError based on
+    // discriminated property 'status':
+    if ('status' in error) {
+      // you can access all properties of `FetchBaseQueryError` here
+      errMsg = 'error' in error ? error.error : JSON.stringify(error.data);
+      // 3) We're left with the 3rd case, SerializedError:
+    } else {
+      // you can access all properties of `SerializedError` here
+      errMsg = 'An error occurred';
+    }
+  }
+  
   return (
     <>
       <MetaData title="Overview" />
@@ -18,7 +32,7 @@ export default function Overview() {
         {isLoading ? (
           <Spinner />
         ) : error ? (
-          <Message variant="destructive" text={error?.data?.message || error?.error} />
+          <Message variant="destructive" text={errMsg} />
         ) : (
           <div className="mt-12 h-full flex flex-col gap-10">
             <div className="grid grid-cols-1 xl:grid-cols-4 gap-10">

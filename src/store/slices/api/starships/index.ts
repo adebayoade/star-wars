@@ -1,15 +1,31 @@
 import { apiSlice } from '..';
 
+export type Starship = {
+  name: string;
+  model: string;
+  crew: string;
+  passengers: string;
+  length: string;
+  designation: string;
+  language: string;
+  average_lifespan: string;
+  eye_colors: string;
+};
+
+export type Starships = {
+  data: Array<Starship>;
+};
+
 export const starships = apiSlice.injectEndpoints({
   endpoints: builder => ({
-    getStarships: builder.query({
+    getStarships: builder.query<Starships, void>({
       query: () => ({
         url: '/starships',
       }),
       keepUnusedDataFor: 5,
-      providesTags: ['People'],
+      providesTags: ['Starships'],
     }),
-    getSingleStarship: builder.query({
+    getSingleStarship: builder.query<Starship, void>({
       query: () => ({
         url: `/starships/1`,
       }),

@@ -6,6 +6,7 @@ In the project directory, you can run:
 
 
 ```js
+- cp .env.example .env.local
 - npm install
 - npm run dev
 ```
@@ -19,9 +20,10 @@ In the project directory, you can run:
 - [Vercel](https://vercel.com/)
 
 ### Production Link
+[https://enyata-den.vercel.app](https://enyata-den.vercel.app/)
 
 
 
 ### Here are some screenshots from this application
 
-#### Login
+- [Login Screen](https://tinyurl.com/yp7lyxmt)

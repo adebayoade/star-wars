@@ -1,19 +1,10 @@
+import { Film } from '@/store/slices/api/films';
 import { ColumnDef } from '@tanstack/react-table';
 import { Eye } from 'lucide-react';
 import { Link } from 'react-router-dom';
-// import Link from 'next/link';
 
-// This type is used to define the shape of our data.
-// You can use a Zod schema here if you want.
-type Films = {
-  name: string;
-  birth_year: string;
-  hair_color: string;
-  height: string;
-  created: string;
-};
 
-export const columns: ColumnDef<Films>[] = [
+export const columns: ColumnDef<Film>[] = [
   {
     accessorKey: 'title',
     header: 'Film Title',

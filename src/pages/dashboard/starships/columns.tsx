@@ -1,20 +1,9 @@
+import { Starship } from '@/store/slices/api/starships';
 import { ColumnDef } from '@tanstack/react-table';
 import { Eye } from 'lucide-react';
 import { Link } from 'react-router-dom';
-// import Link from 'next/link';
 
-// This type is used to define the shape of our data.
-// You can use a Zod schema here if you want.
-type People = {
-  id: string;
-  name: string;
-  birth_year: string;
-  hair_color: string;
-  height: string;
-  created: string;
-};
-
-export const columns: ColumnDef<People>[] = [
+export const columns: ColumnDef<Starship>[] = [
   {
     accessorKey: 'name',
     header: 'Name',

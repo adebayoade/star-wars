@@ -4,13 +4,13 @@ const baseQuery = fetchBaseQuery({
   baseUrl: import.meta.env.VITE_BASE_URL,
 });
 
-async function baseQueryWithAuth(args, api, extra) {
-  const result = await baseQuery(args, api, extra);
-  return result;
-}
+// async function baseQueryWithAuth(args, api, extra) {
+//   const result = await baseQuery(args, api, extra);
+//   return result;
+// }
 
 export const apiSlice = createApi({
-  baseQuery: baseQueryWithAuth, // Use the customized baseQuery
+  baseQuery,
   tagTypes: ['People', 'Films', 'Starships', 'Species'],
   endpoints: builder => ({}),
 });
