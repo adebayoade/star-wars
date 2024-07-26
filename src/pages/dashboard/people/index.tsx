@@ -1,32 +1,20 @@
 import Heading from '@/components/ui/heading';
-import { useGetPeopleQuery } from '@/store/slices/api/people';
+import { Person, useGetPeopleQuery } from '@/store/slices/api/people';
 import { DataTable } from './data-table';
 import { columns } from './columns';
 import Spinner from '@/components/ui/spinner';
 import { Message } from '@/components/message';
 import MetaData from '@/components/ui/meta-data';
+import useErrorMessage from '@/hooks/useErrorMessage';
 
 export default function People() {
-  const { data, isLoading, error } = useGetPeopleQuery();
-
-  let errMsg = '';
-  if (error) {
-    // 2) Checking if error is FetchBaseQueryError based on
-    // discriminated property 'status':
-    if ('status' in error) {
-      // you can access all properties of `FetchBaseQueryError` here
-      errMsg = 'error' in error ? error.error : JSON.stringify(error.data);
-      // 3) We're left with the 3rd case, SerializedError:
-    } else {
-      // you can access all properties of `SerializedError` here
-      errMsg = 'An error occurred';
-    }
-  }
+  const { data: people, isLoading, error } = useGetPeopleQuery();
+  const { errMsg } = useErrorMessage(error);
 
   return (
     <>
       <MetaData title={'People'} />
-      <div className="container h-screen max-w-full mt-12 flex flex-col gap-10">
+      <div className="container h-screen max-w-full pt-12 flex flex-col gap-10">
         {isLoading ? (
           <Spinner />
         ) : error ? (
@@ -34,7 +22,7 @@ export default function People() {
         ) : (
           <>
             <Heading title="People" />
-            <DataTable columns={columns} data={data?.results} />
+            <DataTable columns={columns} data={people?.results as Person[]} />
           </>
         )}
       </div>

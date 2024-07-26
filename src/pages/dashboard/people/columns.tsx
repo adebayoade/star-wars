@@ -1,10 +1,10 @@
-import { People } from '@/store/slices/api/people';
+import { Person } from '@/store/slices/api/people';
+import { UTIL } from '@/utils';
 import { ColumnDef } from '@tanstack/react-table';
-import dayjs from 'dayjs';
 import { Eye } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-export const columns: ColumnDef<People>[] = [
+export const columns: ColumnDef<Person>[] = [
   {
     accessorKey: 'name',
     header: 'Name',
@@ -25,7 +25,7 @@ export const columns: ColumnDef<People>[] = [
     accessorKey: 'created',
     header: 'Created',
     cell: ({ row }) => {
-      return <span>{dayjs(row.getValue('createdAt')).format('MMM DD, YYYY HH:MM A')}</span>;
+      return <span>{UTIL.dateFormatter(row.getValue('created'))}</span>;
     },
   },
   {

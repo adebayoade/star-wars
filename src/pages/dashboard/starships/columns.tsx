@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Starship } from '@/store/slices/api/starships';
 import { ColumnDef } from '@tanstack/react-table';
 import { Eye } from 'lucide-react';
@@ -23,11 +24,14 @@ export const columns: ColumnDef<Starship>[] = [
   {
     accessorKey: 'length',
     header: 'Length',
+    cell: ({ row }: any) => {
+      return <span>{row.getValue('length')} Meters</span>;
+    },
   },
   {
     accessorKey: 'films',
     header: 'Character',
-    cell: ({ row }) => {
+    cell: ({ row }: any) => {
       return <span>{row.getValue('films')[0]}</span>;
     },
   },

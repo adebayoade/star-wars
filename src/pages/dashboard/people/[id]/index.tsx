@@ -3,27 +3,15 @@ import { useGetPeopleDetailsQuery } from '@/store/slices/api/people';
 import Spinner from '@/components/ui/spinner';
 import { Message } from '@/components/message';
 import MetaData from '@/components/ui/meta-data';
+import useErrorMessage from '@/hooks/useErrorMessage';
 
 export default function SinglePerson() {
   const { data, isLoading, error } = useGetPeopleDetailsQuery();
-
-  let errMsg = '';
-  if (error) {
-    // 2) Checking if error is FetchBaseQueryError based on
-    // discriminated property 'status':
-    if ('status' in error) {
-      // you can access all properties of `FetchBaseQueryError` here
-      errMsg = 'error' in error ? error.error : JSON.stringify(error.data);
-      // 3) We're left with the 3rd case, SerializedError:
-    } else {
-      // you can access all properties of `SerializedError` here
-      errMsg = 'An error occurred';
-    }
-  }
+  const { errMsg } = useErrorMessage(error);
 
   return (
     <>
-      <div className="container h-screen max-w-full mt-12 flex flex-col gap-10">
+      <div className="container h-screen max-w-full pt-12 flex flex-col gap-10">
         {isLoading ? (
           <Spinner />
         ) : error ? (
@@ -31,16 +19,16 @@ export default function SinglePerson() {
         ) : (
           <div className="flex gap-10">
             <MetaData title={`${data?.name} | People`} />
-            <img className="" alt="profile picture" src="/images/old-woman-placeholder.png"></img>
+            <img alt="person" src="/images/old-woman-placeholder.png"></img>
             <div className="flex flex-col gap-5">
               <div className="mt-7">
                 <Heading className="text-black" size="lg" title={data?.name} />
               </div>
               <div className="flex flex-col gap-2 font-medium capitalize">
-                <span className="">Gender: {data?.gender}</span>
-                <span className="">Year of birth: {data?.birth_year}</span>
-                <span className="">Skin color: {data?.skin_color}</span>
-                <span className="">Height: {data?.height}CM</span>
+                <span>Gender: {data?.gender}</span>
+                <span>Year of birth: {data?.birth_year}</span>
+                <span>Skin color: {data?.skin_color}</span>
+                <span>Height: {data?.height}CM</span>
               </div>
             </div>
           </div>

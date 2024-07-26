@@ -6,7 +6,7 @@ export default function NotFound() {
   return (
     <>
       <MetaData title={'404'} />
-      <div className="py-32 container">
+      <div className="py-32 container h-full">
         <div className="flex items-center flex-col gap-5">
           <FaExclamationTriangle className="text-yellow-500 text-6xl" />
           <h1 className="title text-center">The requested page can not be found!</h1>

@@ -1,6 +1,6 @@
 import { apiSlice } from '..';
 
-export type Species = {
+export type SingleSpecies = {
   name: string;
   classification: string;
   eye_colors: string;
@@ -12,6 +12,11 @@ export type Species = {
   average_lifespan: string;
 };
 
+export type Species = {
+  count: string;
+  results: Array<SingleSpecies>;
+};
+
 export const speciesApiSlice = apiSlice.injectEndpoints({
   endpoints: builder => ({
     getSpecies: builder.query<Species, void>({
@@ -21,7 +26,7 @@ export const speciesApiSlice = apiSlice.injectEndpoints({
       keepUnusedDataFor: 5,
       providesTags: ['Species'],
     }),
-    getSingleSpecies: builder.query<Species, void>({
+    getSingleSpecies: builder.query<SingleSpecies, void>({
       query: () => ({
         url: `/species/1`,
       }),

@@ -5,7 +5,7 @@ import { Link, NavLink } from 'react-router-dom';
 
 export default function Sidebar() {
   return (
-    <div className="sidebar hidden h-full xl:flex flex-col gap-10 pt-10 p-5 overflow-y-auto bg-secondary">
+    <div className="sidebar hidden h-screen xl:flex flex-col gap-10 pt-10 p-5 overflow-y-auto bg-secondary">
       <Link to={'/login'} className="mx-auto">
         <Logo />
       </Link>
@@ -28,7 +28,7 @@ export default function Sidebar() {
             to={route}
             className={({ isActive }) => (isActive ? 'active-link' : 'non-active-link') + ' link'}
           >
-            <span>{icon}</span>
+            <div>{icon}</div>
             <span>{title}</span>
           </NavLink>
         ))}

@@ -1,15 +1,19 @@
 import { Icon } from '@/components/icons';
 import Hamburger from './hamburger';
+import { Link } from 'react-router-dom';
 
 export default function Topbar() {
   return (
     <div className="shadow">
       <div className="container max-w-full py-3 justify-between xl:justify-end gap-20 flex items-center">
-        <Icon.Notifications />
-        <div className="flex items-center gap-5">
+        <Link className="hover:text-primary" to="/dashboard/notification">
+          <Icon.Notifications />
+        </Link>
+
+        <Link to="/dashboard/account" className="flex items-center gap-5 hover:text-primary">
           <Icon.Avatar />
           <span>John Doe</span>
-        </div>
+        </Link>
 
         <Hamburger />
       </div>

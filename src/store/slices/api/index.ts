@@ -1,16 +1,12 @@
+import { UTIL } from '@/utils';
 import { fetchBaseQuery, createApi } from '@reduxjs/toolkit/query/react';
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: import.meta.env.VITE_BASE_URL,
+  baseUrl: UTIL.processEnv.BASE_API_URL,
 });
-
-// async function baseQueryWithAuth(args, api, extra) {
-//   const result = await baseQuery(args, api, extra);
-//   return result;
-// }
 
 export const apiSlice = createApi({
   baseQuery,
   tagTypes: ['People', 'Films', 'Starships', 'Species'],
-  endpoints: builder => ({}),
+  endpoints: () => ({}),
 });

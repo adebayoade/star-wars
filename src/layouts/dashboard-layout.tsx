@@ -4,11 +4,11 @@ import { Outlet } from 'react-router-dom';
 
 export default function DashboardLayout() {
   return (
-    <div className="dashboard h-screen">
-      <div className={`grid h-full grid-cols-1 xl:grid-cols-[380px_1fr]`}>
+    <div className="dashboard">
+      <div className={`grid h-full grid-cols-1 xl:grid-cols-[270px_1fr]`}>
         <Sidebar />
 
-        <div className="pb-10 h-full">
+        <div className="h-full">
           <Topbar />
           <Outlet />
         </div>

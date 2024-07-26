@@ -1,23 +1,18 @@
 import { Icon } from '@/components/icons';
 
 export const DashboardMenu = [
-  // {
-  //   icon: <Icon.Overview />,
-  //   title: 'Overview',
-  //   route: '/dashboard',
-  // },
   {
-    icon: <Icon.Starships />,
+    icon: <Icon.Starships className="w-[17px]" />,
     title: 'Starships',
     route: '/dashboard/starships',
   },
   {
-    icon: <Icon.People />,
+    icon: <Icon.People className="w-[17px]" />,
     title: 'People',
     route: '/dashboard/people',
   },
   {
-    icon: <Icon.Species />,
+    icon: <Icon.Species className="w-[17px]" />,
     title: 'Species',
     route: '/dashboard/species',
   },

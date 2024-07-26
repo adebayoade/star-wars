@@ -5,14 +5,19 @@ export type Film = {
   release_date: string;
   director: string;
   episode_id: string;
-  characters: string;
-  producer: string
-  count: string
+  characters: string[];
+  producer: string;
+  count: string;
+};
+
+export type Films = {
+  count: string;
+  results: Array<Film>;
 };
 
 export const filmsSlice = apiSlice.injectEndpoints({
   endpoints: builder => ({
-    getFilms: builder.query<Film, void>({
+    getFilms: builder.query<Films, void>({
       query: () => ({
         url: '/films',
       }),

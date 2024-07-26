@@ -1,10 +1,10 @@
-import { Species } from '@/store/slices/api/species';
+import { SingleSpecies } from '@/store/slices/api/species';
+import { UTIL } from '@/utils';
 import { ColumnDef } from '@tanstack/react-table';
-import dayjs from 'dayjs';
 import { Eye } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-export const columns: ColumnDef<Species>[] = [
+export const columns: ColumnDef<SingleSpecies>[] = [
   {
     accessorKey: 'name',
     header: 'Name',
@@ -29,7 +29,7 @@ export const columns: ColumnDef<Species>[] = [
     accessorKey: 'created',
     header: 'Created',
     cell: ({ row }) => {
-      return <span>{dayjs(row.getValue('created')).format('MMM DD, YYYY HH:MM A')}</span>;
+      return <span>{UTIL.dateFormatter(row.getValue('created'))}</span>;
     },
   },
   {

@@ -1,7 +1,6 @@
 import { apiSlice } from '..';
 
-export type People = {
-  id: string;
+export type Person = {
   name: string;
   birth_year: string;
   hair_color: string;
@@ -9,6 +8,12 @@ export type People = {
   created: string;
   gender: string;
   skin_color: string;
+  count: string;
+};
+
+export type People = {
+  count: string;
+  results: Array<Person>;
 };
 
 export const peopleApiSlice = apiSlice.injectEndpoints({
@@ -20,7 +25,7 @@ export const peopleApiSlice = apiSlice.injectEndpoints({
       keepUnusedDataFor: 5,
       providesTags: ['People'],
     }),
-    getPeopleDetails: builder.query<People, void>({
+    getPeopleDetails: builder.query<Person, void>({
       query: () => ({
         url: `/people/1`,
       }),

@@ -10,10 +10,12 @@ export type Starship = {
   language: string;
   average_lifespan: string;
   eye_colors: string;
+  pilots: string;
 };
 
 export type Starships = {
-  data: Array<Starship>;
+  count: string;
+  results: Array<Starship>;
 };
 
 export const starships = apiSlice.injectEndpoints({

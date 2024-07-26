@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 export default function LoginForm() {
   const navigate = useNavigate();
 
-  const submitHandler = e => {
+  const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     navigate('/dashboard');
   };
@@ -46,7 +46,6 @@ export default function LoginForm() {
 
         <div className="mt-[40px] text-center">
           <span>
-            {' '}
             <Link to={'privacy-policy'} className="underline hover:text-primary">
               Privacy Policy
             </Link>{' '}

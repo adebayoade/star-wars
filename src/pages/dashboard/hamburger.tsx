@@ -14,7 +14,7 @@ export default function Hamburger() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <button className="w-full h-10 flex items-center">
+        <button className="w-full h-10 flex items-center hover:text-primary">
           <Icon.Drawer />
         </button>
       </DropdownMenuTrigger>
