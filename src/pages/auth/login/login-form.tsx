@@ -1,9 +1,9 @@
 import { Button } from '@/components/ui/button';
 import Heading from '@/components/ui/heading';
-// import Input from '@/components/ui/input';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import Input from '@/components/ui/input';
 
 type FormFields = {
   email: string;
@@ -37,18 +37,20 @@ export default function LoginForm() {
       <div className="flex flex-col gap-10">
         <div className="relative flex flex-col gap-2">
           <label className="label-top">Email</label>
-          <input
-            {...register('email', {
-              required: 'Email is required',
-              pattern: {
-                // Regex to validate email
-                value: /^[\w-]+(\.[\w-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$/i,
-                message: 'Invalid email address',
-              },
-            })}
-            type="email"
+          <Input
+            register={{
+              ...register('email', {
+                required: 'Email is required',
+                pattern: {
+                  // Regex to validate email
+                  value: /^[\w-]+(\.[\w-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$/i,
+                  message: 'Invalid email address',
+                },
+              }),
+            }}
+            label="Email"
             placeholder="Enter your email"
-            className="form-input border py-3 px-4 h-[48px] bg-white placeholder-gray-400 w-full block focus:outline-primary"
+            type="email"
           />
           {errors.email && (
             <span className="text-red-500 text-sm">{errors.email?.message as string}</span>
@@ -56,23 +58,24 @@ export default function LoginForm() {
         </div>
 
         <div className="relative flex flex-col gap-2">
-          <label className="label-top">Password</label>
-          <input
-            {...register('password', {
-              required: 'Password is required',
-              minLength: {
-                value: 6,
-                message: 'Password must have at least 6 characters',
-              },
-              pattern: {
-                // Regex to validate email
-                value: /^(?=.*\d)(?=.*[a-z]).{6,15}$/,
-                message: 'Password must be a combination of letters and numbers',
-              },
-            })}
+          <Input
+            label="Password"
+            register={{
+              ...register('password', {
+                required: 'Password is required',
+                minLength: {
+                  value: 6,
+                  message: 'Password must have at least 6 characters',
+                },
+                pattern: {
+                  // Regex to validate email
+                  value: /^(?=.*\d)(?=.*[a-z]).{6,15}$/,
+                  message: 'Password must be a combination of letters and numbers',
+                },
+              }),
+            }}
             type="password"
             placeholder="Enter your password"
-            className="form-input border py-3 px-4 h-[48px] bg-white placeholder-gray-400 w-full block focus:outline-primary"
           />
           {errors.password && (
             <span className="text-red-500 text-sm">{errors.password?.message as string}</span>

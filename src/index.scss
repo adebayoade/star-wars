@@ -70,9 +70,6 @@
     font-family: 'Inter', sans-serif;
     font-optical-sizing: auto;
     color: #434854;
-    // font-style: normal;
-    // font-variation-settings:
-    //   "slnt" 0;
   }
   .title {
     @apply text-[27px] lg:text-5xl leading-snug font-semibold;
@@ -114,8 +111,6 @@
         rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px,
         rgba(0, 0, 0, 0.07) 0px 16px 16px;
       @apply px-5 py-7 rounded-2xl;
-
-      // flex: 0 0 auto;
     }
   }
 }
