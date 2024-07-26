@@ -20,7 +20,7 @@ In the project directory, you can run:
 - [Vercel](https://vercel.com/)
 
 ### Production Link
-[https://enyata-den.vercel.app](https://enyata-den.vercel.app/)
+[https://enyata-den.vercel.app](https://enyata-den.vercel.app)
 
 
 
