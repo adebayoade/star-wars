@@ -8,7 +8,7 @@ TopBarProgress.config({
     '1.0': '#0A74DC',
   },
   barThickness: 3,
-  shadowBlur: 2,
+  shadowBlur: 1,
 });
 
 export default function TopLoader() {

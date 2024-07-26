@@ -12,7 +12,7 @@ export default function Input({ label, placeholder, type = 'text' }: InputProps)
         type={type}
         name="message"
         placeholder={placeholder ? placeholder : ''}
-        className="form-input border py-3 px-4 h-[55px] bg-white placeholder:text-sm w-full block focus:outline-primary rounded-lg"
+        className="form-input border py-3 px-4 h-[48px] bg-white placeholder:text-sm w-full block focus:outline-primary rounded-lg"
       />
     </div>
   );

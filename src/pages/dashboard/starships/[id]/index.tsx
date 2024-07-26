@@ -17,7 +17,7 @@ export default function SingleStarship() {
         ) : error ? (
           <Message variant="destructive" text={errMsg} />
         ) : (
-          <div className="flex gap-10">
+          <div className="flex flex-col md:flex-row gap-10">
             <MetaData title={`${data?.name} | Starship`} />
             <img alt="starship" src="/images/starship-placeholder.png"></img>
             <div className="flex flex-col gap-5">

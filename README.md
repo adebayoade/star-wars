@@ -26,4 +26,9 @@ In the project directory, you can run:
 
 ### Here are some screenshots from this application
 
-- [Login Screen](https://tinyurl.com/yp7lyxmt)
+- [Login Screen](https://tinyurl.com/27eopsdl)
+- [Login Screen validation check](https://tinyurl.com/2aot2zf2)
+- [Login Screen validation check](https://tinyurl.com/2aot2zf2)
+- [Overview](https://tinyurl.com/22t633ts)
+- [People](https://tinyurl.com/2dk7ogb9)
+- [Single Person](https://tinyurl.com/29zewsvw)

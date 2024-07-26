@@ -17,7 +17,7 @@ export default function SinglePerson() {
         ) : error ? (
           <Message variant="destructive" text={errMsg} />
         ) : (
-          <div className="flex gap-10">
+          <div className="flex flex-col md:flex-row gap-10">
             <MetaData title={`${data?.name} | People`} />
             <img alt="person" src="/images/old-woman-placeholder.png"></img>
             <div className="flex flex-col gap-5">

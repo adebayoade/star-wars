@@ -1,6 +1,6 @@
 import Heading from '@/components/ui/heading';
 import {  SingleSpecies, useGetSpeciesQuery } from '@/store/slices/api/species';
-import { DataTable } from './data-table';
+import { DataTable } from '@/components/data-table';
 import { columns } from './columns';
 import Spinner from '@/components/ui/spinner';
 import { Message } from '@/components/message';

@@ -1,19 +1,19 @@
 import Heading from '@/components/ui/heading';
-import { DataTable } from '@/components/data-table';
-import { columns } from './columns';
+import { Film, useGetFilmsQuery } from '@/store/slices/api/films';
 import Spinner from '@/components/ui/spinner';
 import { Message } from '@/components/message';
 import MetaData from '@/components/ui/meta-data';
-import { Starship, useGetStarshipsQuery } from '@/store/slices/api/starships';
 import useErrorMessage from '@/hooks/useErrorMessage';
+import { columns } from './columns';
+import { DataTable } from '@/components/data-table';
 
-export default function Starships() {
-  const { data: starship, isLoading, error } = useGetStarshipsQuery();
+export default function Films() {
+  const { data: films, isLoading, error } = useGetFilmsQuery();
   const { errMsg } = useErrorMessage(error);
 
   return (
     <>
-      <MetaData title={'Starships'} />
+      <MetaData title={'Films'} />
       <div className="container h-screen max-w-full pt-12 flex flex-col gap-10">
         {isLoading ? (
           <Spinner />
@@ -21,8 +21,8 @@ export default function Starships() {
           <Message variant="destructive" text={errMsg} />
         ) : (
           <>
-            <Heading title="Starships" />
-            <DataTable columns={columns} data={starship?.results as Starship[]} />
+            <Heading title="Films" />
+            <DataTable columns={columns} data={films?.results as Film[]} />
           </>
         )}
       </div>

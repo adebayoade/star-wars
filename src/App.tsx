@@ -17,6 +17,7 @@ import SinglePerson from './pages/dashboard/people/[id]';
 import SingleFilm from './pages/dashboard/films/[id]';
 import SingleSpecies from './pages/dashboard/species/[id]';
 import SingleStarship from './pages/dashboard/starships/[id]';
+import Films from './pages/dashboard/films';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -37,6 +38,7 @@ const router = createBrowserRouter(
           <Route path="/dashboard/people/:id" element={<SinglePerson />} />
           <Route path="/dashboard/species" element={<Species />} />
           <Route path="/dashboard/species/:1" element={<SingleSpecies />} />
+          <Route path="/dashboard/films" element={<Films />} />
           <Route path="/dashboard/films/:1" element={<SingleFilm />} />
           {/* Dashboard 404 page */}
           <Route path="*" element={<NotFound />} />

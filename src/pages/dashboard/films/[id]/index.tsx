@@ -17,7 +17,7 @@ export default function SingleFilm() {
         ) : error ? (
           <Message variant="destructive" text={errMsg} />
         ) : (
-          <div className="flex gap-10">
+          <div className="flex flex-col md:flex-row gap-10">
             <MetaData title={`${data?.title} | Film`} />
             <img alt="film" src="/images/film-placeholder.png"></img>
             <div className="flex flex-col gap-5">
