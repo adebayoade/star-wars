@@ -20,14 +20,13 @@ In the project directory, you can run:
 - [Vercel](https://vercel.com/)
 
 ### Production Link
-[https://enyata-den.vercel.app](https://enyata-den.vercel.app)
+[https://enyata-frontend.vercel.app/](https://enyata-frontend.vercel.app/)
 
 
 
 ### Here are some screenshots from this application
 
 - [Login Screen](https://tinyurl.com/27eopsdl)
-- [Login Screen validation check](https://tinyurl.com/2aot2zf2)
 - [Login Screen validation check](https://tinyurl.com/2aot2zf2)
 - [Overview](https://tinyurl.com/22t633ts)
 - [People](https://tinyurl.com/2dk7ogb9)
