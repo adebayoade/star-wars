@@ -3,11 +3,12 @@ import MetaData from '@/components/ui/meta-data';
 import { Film, useGetFilmsQuery } from '@/store/slices/api/films';
 import Spinner from '@/components/ui/spinner';
 import { Message } from '@/components/message';
-import { DataTable } from './data-table';
+// import { DataTable } from './data-table';
 import Heading from '@/components/ui/heading';
 import { Icon } from '@/components/icons';
 import useErrorMessage from '@/hooks/useErrorMessage';
 import { columns } from '../films/columns';
+import { DataTable } from '@/components/data-table';
 
 export default function Overview() {
   const { data: films, isLoading, error } = useGetFilmsQuery();

@@ -8,7 +8,7 @@ export default function DashboardLayout() {
       <div className={`grid h-full grid-cols-1 xl:grid-cols-[272px_1fr]`}>
         <Sidebar />
 
-        <div className="h-full">
+        <div className="h-screen pb-10 overflow-y-auto">
           <Topbar />
           <Outlet />
         </div>

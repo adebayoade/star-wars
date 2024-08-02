@@ -22,14 +22,14 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
   });
 
   return (
-    <div className="rounded-md border">
-      <Table className='text-base'>
-        <TableHeader className=''>
+    <div className="border rounded-lg">
+      <Table className="text-base">
+        <TableHeader className="">
           {table.getHeaderGroups().map(headerGroup => (
             <TableRow className="!font-semibold" key={headerGroup.id}>
               {headerGroup.headers.map(header => {
                 return (
-                  <TableHead className='text-[#A4A7B7]' key={header.id}>
+                  <TableHead className="text-[#A4A7B7]" key={header.id}>
                     {header.isPlaceholder
                       ? null
                       : flexRender(header.column.columnDef.header, header.getContext())}

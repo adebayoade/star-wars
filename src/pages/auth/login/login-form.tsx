@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import Input from '@/components/ui/input';
+import { useState } from 'react';
+import { EyeIcon, EyeOffIcon } from 'lucide-react';
 
 type FormFields = {
   email: string;
@@ -11,6 +13,7 @@ type FormFields = {
 };
 
 export default function LoginForm() {
+  const [showPassword, setShowPassword] = useState(false);
   const {
     register,
     handleSubmit,
@@ -22,6 +25,11 @@ export default function LoginForm() {
   const submitHandler: SubmitHandler<FormFields> = data => {
     console.log(data);
     navigate('/dashboard');
+  };
+
+  const toggleInputHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    setShowPassword(!showPassword);
   };
 
   return (
@@ -36,7 +44,6 @@ export default function LoginForm() {
 
       <div className="flex flex-col gap-10">
         <div className="relative flex flex-col gap-2">
-          <label className="label-top">Email</label>
           <Input
             register={{
               ...register('email', {
@@ -68,15 +75,21 @@ export default function LoginForm() {
                   message: 'Password must have at least 6 characters',
                 },
                 pattern: {
-                  // Regex to validate email
+                  // Regex to validate password
                   value: /^(?=.*\d)(?=.*[a-z]).{6,15}$/,
                   message: 'Password must be a combination of letters and numbers',
                 },
               }),
             }}
-            type="password"
+            // isError={errors?.password}
+            type={showPassword ? 'text' : 'password'}
             placeholder="Enter your password"
           />
+
+          <button className="absolute right-0 top-3 mr-3" onClick={toggleInputHandler}>
+            {showPassword ? <EyeIcon /> : <EyeOffIcon />}
+          </button>
+
           {errors.password && (
             <span className="text-red-500 text-sm">{errors.password?.message as string}</span>
           )}
