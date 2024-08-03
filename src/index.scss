@@ -71,6 +71,9 @@
     font-optical-sizing: auto;
     color: #434854;
   }
+  input::placeholder {
+    @apply text-sm;
+  }
   .title {
     @apply text-[27px] lg:text-5xl leading-snug font-semibold;
     line-height: 1.375;

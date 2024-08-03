@@ -75,7 +75,7 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       borderColor: {
-        DEFAULT: "#A4A7B7",
+        DEFAULT: "#A4A7B766",
     },
     },
   },
