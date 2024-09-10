@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Message from '@/components/message';
+import { Message } from '@/components/message';
 
 describe('Message', () => {
   it('should show the message component in the DOM', () => {
