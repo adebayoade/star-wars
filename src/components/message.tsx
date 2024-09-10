@@ -8,7 +8,7 @@ type MessageProps = {
   variant?: 'default' | 'destructive';
 };
 
-export function Message({ text, description, variant }: MessageProps) {
+export default function Message({ text, description, variant }: MessageProps) {
   return (
     <Alert variant={variant}>
       {variant === 'default' ? (
