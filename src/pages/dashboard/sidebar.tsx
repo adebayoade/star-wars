@@ -9,7 +9,7 @@ export default function Sidebar() {
       <Link to={'/login'} className="mx-auto">
         <Logo />
       </Link>
-
+      <span>overview</span>
       <NavLink
         className={({ isActive }) => (isActive ? 'active-link' : 'non-active-link') + ' link'}
         to={'/dashboard'}
