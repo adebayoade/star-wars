@@ -1,4 +1,4 @@
-# Enyata Assessment
+# Star wars
 
 ### Frontend Developer assessment
 
