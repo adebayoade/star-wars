@@ -1,7 +1,5 @@
 import { screen } from '@testing-library/react';
 import { navigateTo } from './utils';
-import Overview from '@/pages/dashboard/overview';
-import Providers from './providers';
 
 describe('Router', () => {
   it('should render the login page for /login', () => {

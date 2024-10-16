@@ -1,5 +1,3 @@
-import { render, screen } from '@testing-library/react';
-
 describe('group', () => {
   it('should', async () => {
     const res = await fetch('/products');
